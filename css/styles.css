@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+header {
+    background: #007BFF;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0001;
+}
+
+#chat-box {
+    height: 350px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.user-message {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+.ai-message {
+    background: #e0e0e0;
+    padding: 10px;
+    margin: 10px 0;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+#input-area {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+textarea {
+    width: 80%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 15px;
+    background: #007BFF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+#generate-doc {
+    margin-top: 20px;
+    width: 100%;
+    background: #28a745;
+}
+
+.ai-message.typing {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+    font-style: italic;
+    color: #444;
+}
+
+
+.typing .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #666;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+.typing .dot:nth-child(2) { animation-delay: 0.15s; }
+.typing .dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes blink {
+    0% { opacity: 0.2; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-3px); }
+    100% { opacity: 0.2; transform: translateY(0); }
+}
+
+
+.ai-message {
+    transition: background 150ms ease, transform 150ms ease;
+    white-space: pre-wrap; 
+}
+#typing-indicator {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+
+#typing-indicator.show {
+    opacity: 1;
+}
+
+
+.hidden {
+    display: none;
+}
+
